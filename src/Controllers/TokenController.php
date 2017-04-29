@@ -2,18 +2,18 @@
 
 namespace Rundeck\Controllers;
 
-
 use Rundeck\HttpClient;
 
-class TokenController {
+class TokenController
+{
 
-    function __construct()
+    public function __construct()
     {
-
     }
 
-    public function findAll() {
-        $response = HttpClient::get('/tokens');
+    public function findAll($alt = "xml")
+    {
+        $response = HttpClient::get('/tokens', $alt);
         return $response;
     }
 }

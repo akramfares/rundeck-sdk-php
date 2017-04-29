@@ -12,9 +12,10 @@ class Rundeck
         HttpClient::setAuth($endpoint, $authToken, $version);
     }
 
-    public function __call($name, $arguments) {
+    public function __call($name, $arguments)
+    {
         $className = "\\Rundeck\\Controllers\\".ucfirst($name)."Controller";
-        if(class_exists($className)) {
+        if (class_exists($className)) {
             $resource = new \ReflectionClass($className);
             return $resource->newInstanceArgs($arguments);
         }

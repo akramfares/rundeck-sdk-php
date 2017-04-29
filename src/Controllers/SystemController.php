@@ -2,10 +2,10 @@
 
 namespace Rundeck\Controllers;
 
-
 use Rundeck\HttpClient;
 
-class SystemController {
+class SystemController
+{
 
     private $actions = [
         "info",
@@ -13,8 +13,9 @@ class SystemController {
         "logstorage/incomplete"
     ];
 
-    public function get($action, $alt = "xml") {
-        if(in_array($action, $this->actions)) {
+    public function get($action, $alt = "xml")
+    {
+        if (in_array($action, $this->actions)) {
             $response = HttpClient::get('/system/'. $action, $alt);
             return $response;
         } else {

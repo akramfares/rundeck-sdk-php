@@ -4,7 +4,8 @@ namespace Rundeck\Controllers;
 
 use Rundeck\HttpClient;
 
-class ProjectController {
+class ProjectController
+{
 
     private $name;
 
@@ -18,24 +19,27 @@ class ProjectController {
         "history" => ["xml"],
     ];
 
-    function __construct($name = null)
+    public function __construct($name = null)
     {
         $this->name = $name;
     }
 
-    public function find($alt = "xml") {
+    public function find($alt = "xml")
+    {
         $response = HttpClient::get('/project/'.$this->name, $alt);
         return $response;
     }
 
-    public function findAll($alt = "xml") {
+    public function findAll($alt = "xml")
+    {
         $response = HttpClient::get('/projects', $alt);
         return $response;
     }
 
-    public function get($action, $alt = "xml") {
-        if(array_key_exists($action, $this->actions)) {
-            if(!in_array($alt, $this->actions[$action])) {
+    public function get($action, $alt = "xml")
+    {
+        if (array_key_exists($action, $this->actions)) {
+            if (!in_array($alt, $this->actions[$action])) {
                 throw new \Exception("Invalid Format: ". $alt);
             }
             $response = HttpClient::get('/project/'.$this->name. '/' .$action, $alt);
@@ -45,7 +49,8 @@ class ProjectController {
         }
     }
 
-    public function resource($name, $alt = "xml") {
+    public function resource($name, $alt = "xml")
+    {
         $response = HttpClient::get('/project/'.$this->name. '/resource/' .$name, $alt);
         return $response;
     }
