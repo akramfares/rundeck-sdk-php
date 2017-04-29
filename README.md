@@ -7,21 +7,8 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
-
-## Structure
-
-If any of the following are applicable to your project, then the directory structure should follow industry best practises by being named the following.
-
-```
-bin/        
-config/
-src/
-tests/
-vendor/
-```
-
+PHP client for Rundeck web API. 
+This is a work in progress...
 
 ## Install
 
@@ -34,8 +21,23 @@ $ composer require akramfares/rundeck-sdk-php
 ## Usage
 
 ``` php
-$skeleton = new Rundeck();
-echo $skeleton->echoPhrase('Hello, League!');
+$client = new Rundeck\Rundeck(ENDPOINT, AUTH_TOKEN, API_VERSION);
+
+// Get all projects
+$projects = $client->project()->findAll();
+
+// Get jobs of project
+$jobs = $client->project("Project")->get("jobs/export");
+
+// Get job info
+$job = $client->job("c4ec2b60-ac83-4ee2-9266-67ce795c9603")->find();
+
+// Get job executions
+$executions = $client->job("c4ec2b60-ac83-4ee2-9266-67ce795c9603")->get('executions');
+
+// Get execution info
+$execution = $client->execution("4939")->find();
+
 ```
 
 ## Change log
@@ -54,7 +56,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details
 
 ## Security
 
-If you discover any security related issues, please email akramfares@gmail.com instead of using the issue tracker.
+If you discover any security related issues, please email akramfares |at| gmail |.| com instead of using the issue tracker.
 
 ## Credits
 
