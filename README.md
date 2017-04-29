@@ -26,17 +26,33 @@ $client = new Rundeck\Rundeck(ENDPOINT, AUTH_TOKEN, API_VERSION);
 // Get all projects
 $projects = $client->project()->findAll();
 
+foreach($projects["project"] as $project) {
+    echo $project["name"]. "\n";
+}
+
 // Get jobs of project
 $jobs = $client->project("Project")->get("jobs/export");
+
+foreach($jobs["job"] as $job) {
+    echo $job["name"]. "\n";
+}
 
 // Get job info
 $job = $client->job("c4ec2b60-ac83-4ee2-9266-67ce795c9603")->find();
 
+echo $job["job"]["name"] . ": " . $job["job"]["id"];
+
 // Get job executions
 $executions = $client->job("c4ec2b60-ac83-4ee2-9266-67ce795c9603")->get('executions');
 
+foreach ($executions["execution"] as $execution) {
+    echo $execution["job"]["name"] . " started at " . $execution["date-started"] ."\n";
+}
+
 // Get execution info
 $execution = $client->execution("4939")->find();
+
+echo $execution["job"]["name"] . " started at " . $execution["date-started"];
 
 ```
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace Rundeck\Resources;
+namespace Rundeck\Controllers;
 
 
 use Rundeck\HttpClient;
 
-class Token {
+class TokenController {
 
     function __construct()
     {
@@ -14,6 +14,6 @@ class Token {
 
     public function findAll() {
         $response = HttpClient::get('/tokens');
-        return $response->getBody();
+        return $response;
     }
 }

@@ -1,19 +1,17 @@
 <?php
 
-namespace Rundeck\Resources;
+namespace Rundeck\Controllers;
 
 use Rundeck\HttpClient;
 
-class Execution {
+class JobController {
 
     private $name;
 
     private $actions = [
-        "abort" => ["xml", "json"],
-        "output" => ["xml", "json"],
-        "output/state" => ["xml", "json"],
-        "state" => ["xml", "json"],
-        "input/files" => ["xml", "json"],
+        "executions" => ["xml"],
+        "input/files" => ["xml"],
+        "info" => ["xml"],
     ];
 
     function __construct($name = null)
@@ -22,8 +20,8 @@ class Execution {
     }
 
     public function find($alt = "xml") {
-        $response = HttpClient::get('/execution/'.$this->name, $alt);
-        return $response->getBody();
+        $response = HttpClient::get('/job/'.$this->name, $alt);
+        return $response;
     }
 
     public function get($action, $alt = "xml") {
@@ -31,8 +29,8 @@ class Execution {
             if(!in_array($alt, $this->actions[$action])) {
                 throw new \Exception("Invalid Format: ". $alt);
             }
-            $response = HttpClient::get('/execution/'.$this->name. '/' .$action, $alt);
-            return $response->getBody();
+            $response = HttpClient::get('/job/'.$this->name. '/' .$action, $alt);
+            return $response;
         } else {
             throw new \Exception("Action invalid.");
         }

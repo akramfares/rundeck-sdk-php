@@ -27,11 +27,17 @@ class HttpClient {
 
     public static function get($uri, $alt) {
         $options = [];
+
         if($alt == "json") {
             $options = ['headers'=> ['Accept' => 'application/json']];
         }
         $uri = self::$endpoint. "/api/". self::$version .$uri."?authtoken=".self::$authToken;
-        echo "\n".$uri ."\n";
-        return self::getClient()->request('GET', $uri, $options);
+
+        $response = self::getClient()->request('GET', $uri, $options);
+        $xml = simplexml_load_string($response->getBody());
+        $json = json_encode($xml);
+        $data = json_decode($json,TRUE);
+
+        return $data;
     }
 }

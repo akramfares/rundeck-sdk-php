@@ -1,11 +1,11 @@
 <?php
 
-namespace Rundeck\Resources;
+namespace Rundeck\Controllers;
 
 
 use Rundeck\HttpClient;
 
-class System {
+class SystemController {
 
     private $actions = [
         "info",
@@ -16,7 +16,7 @@ class System {
     public function get($action, $alt = "xml") {
         if(in_array($action, $this->actions)) {
             $response = HttpClient::get('/system/'. $action, $alt);
-            return $response->getBody();
+            return $response;
         } else {
             throw new \Exception("Action invalid.");
         }
