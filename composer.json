@@ -1,36 +1,37 @@
 {
-    "name": ":vendor/:package_name",
+    "name": "akramfares/rundeck-sdk-php",
     "type": "library",
-    "description": ":package_description",
+    "description": "PHP SDK for Rundeck web API",
     "keywords": [
-        ":vendor",
-        ":package_name"
+        "akramfares",
+        "rundeck-sdk-php"
     ],
-    "homepage": "https://github.com/:vendor/:package_name",
+    "homepage": "https://github.com/akramfares/rundeck-sdk-php",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": ":author_website",
+            "name": "Akram Fares",
+            "email": "akramfares@gmail.com",
+            "homepage": "https://github.com/akramfares",
             "role": "Developer"
         }
     ],
     "require": {
-        "php" : "~5.6|~7.0"
+        "php" : "~5.5|~7.0"
     },
     "require-dev": {
         "phpunit/phpunit" : "~4.0||~5.0||~6.0",
-        "squizlabs/php_codesniffer": "^2.3"
+        "squizlabs/php_codesniffer": "^2.3",
+        "guzzlehttp/guzzle": "^6.2"
     },
     "autoload": {
         "psr-4": {
-            ":vendor\\:package_name\\": "src"
+            "Rundeck\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            ":vendor\\:package_name\\": "tests"
+            "Rundeck\\": "tests"
         }
     },
     "scripts": {
