@@ -1,0 +1,11 @@
+<logstorage>
+    <incompleteExecutions total="[#]" max="20" offset="0"/>
+    <execution id="[EXECID]" project="[PROJECT]" href="[API HREF]" permalink="[GUI HREF]">
+        <storage incompleteFiletypes="[TYPES]" queued="true/false" failed="true/false" date="[DATE]" localFilesPresent="true/false">
+            <errors>
+                <message>[error message]</message>
+                <message>[error message...]</message>
+            </errors>
+        </storage>
+    </execution>
+</logstorage>

@@ -1,0 +1,49 @@
+<system>
+    <timestamp epoch="1305909785806" unit="ms">
+        <datetime>2011-05-20T16:43:05Z</datetime>
+    </timestamp>
+    <rundeck>
+        <version>1.2.1</version>
+        <apiversion>2</apiversion>
+        <build>1.2.1-0-beta</build>
+        <node>Venkman.local</node>
+        <base>/Users/greg/rundeck121</base>
+        <serverUUID>3E43E30D-F3D7-45AA-942A-04D5BAFED8CA</serverUUID>
+    </rundeck>
+    <executions active="true" executionMode="active" />
+    <os>
+        <arch>x86_64</arch>
+        <name>Mac OS X</name>
+        <version>10.6.7</version>
+    </os>
+    <jvm>
+        <name>Java HotSpot(TM) 64-Bit Server VM</name>
+        <vendor>Apple Inc.</vendor>
+        <version>19.1-b02-334</version>
+    </jvm>
+    <stats>
+        <uptime duration="300584" unit="ms">
+            <since epoch="1305909485222" unit="ms">
+                <datetime>2011-05-20T16:38:05Z</datetime>
+            </since>
+        </uptime>
+        <cpu>
+            <loadAverage unit="percent">0.40234375</loadAverage>
+            <processors>4</processors>
+        </cpu>
+        <memory unit="byte">
+            <max>477233152</max>
+            <free>76626216</free>
+            <total>257163264</total>
+        </memory>
+        <scheduler>
+            <running>0</running>
+            <threadPoolSize>10</threadPoolSize>
+        </scheduler>
+        <threads>
+            <active>24</active>
+        </threads>
+    </stats>
+    <metrics href='http://dignan:4440/metrics/metrics?pretty=true' contentType='text/json' />
+    <threadDump href='http://dignan:4440/metrics/threads' contentType='text/plain' />
+</system>

@@ -1,0 +1,8 @@
+<logStorage enabled="true" pluginName="NAME">
+    <succeededCount>349</succeededCount>
+    <failedCount>0</failedCount>
+    <queuedCount>0</queuedCount>
+    <totalCount>349</totalCount>
+    <incompleteCount>0</incompleteCount>
+    <missingCount>0</missingCount>
+</logStorage>
