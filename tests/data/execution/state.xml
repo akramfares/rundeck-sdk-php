@@ -1,0 +1,94 @@
+<executionState id="135">
+    <startTime>2014-01-13T20:58:59Z</startTime>
+    <updateTime>2014-01-13T20:59:10Z</updateTime>
+    <stepCount>2</stepCount>
+    <allNodes>
+        <nodes>
+            <node name="dignan" />
+        </nodes>
+    </allNodes>
+    <targetNodes>
+        <nodes>
+            <node name="dignan" />
+        </nodes>
+    </targetNodes>
+    <executionId>135</executionId>
+    <serverNode>dignan</serverNode>
+    <endTime>2014-01-13T20:59:10Z</endTime>
+    <executionState>SUCCEEDED</executionState>
+    <completed>true</completed>
+    <steps>
+        <step stepctx="1" id="1">
+            <startTime>2014-01-13T20:58:59Z</startTime>
+            <nodeStep>true</nodeStep>
+            <updateTime>2014-01-13T20:58:59Z</updateTime>
+            <endTime>2014-01-13T20:59:04Z</endTime>
+            <executionState>SUCCEEDED</executionState>
+            <nodeStates>
+                <nodeState name="dignan">
+                    <startTime>2014-01-13T20:58:59Z</startTime>
+                    <updateTime>2014-01-13T20:59:04Z</updateTime>
+                    <endTime>2014-01-13T20:59:04Z</endTime>
+                    <executionState>SUCCEEDED</executionState>
+                </nodeState>
+            </nodeStates>
+        </step>
+        <step stepctx="2" id="2">
+            <startTime>2014-01-13T20:59:04Z</startTime>
+            <nodeStep>false</nodeStep>
+            <updateTime>2014-01-13T20:59:10Z</updateTime>
+            <hasSubworkflow>true</hasSubworkflow>
+            <endTime>2014-01-13T20:59:10Z</endTime>
+            <executionState>SUCCEEDED</executionState>
+            <workflow>
+                <startTime>2014-01-13T20:59:04Z</startTime>
+                <updateTime>2014-01-13T20:59:10Z</updateTime>
+                <stepCount>1</stepCount>
+                <allNodes>
+                    <nodes>
+                        <node name="dignan" />
+                    </nodes>
+                </allNodes>
+                <targetNodes>
+                    <nodes>
+                        <node name="dignan" />
+                    </nodes>
+                </targetNodes>
+                <endTime>2014-01-13T20:59:10Z</endTime>
+                <executionState>SUCCEEDED</executionState>
+                <completed>true</completed>
+                <steps>
+                    <step stepctx="2/1" id="1">
+                        <startTime>2014-01-13T20:59:04Z</startTime>
+                        <nodeStep>true</nodeStep>
+                        <updateTime>2014-01-13T20:59:04Z</updateTime>
+                        <endTime>2014-01-13T20:59:10Z</endTime>
+                        <executionState>SUCCEEDED</executionState>
+                        <nodeStates>
+                            <nodeState name="dignan">
+                                <startTime>2014-01-13T20:59:04Z</startTime>
+                                <updateTime>2014-01-13T20:59:10Z</updateTime>
+                                <endTime>2014-01-13T20:59:10Z</endTime>
+                                <executionState>SUCCEEDED</executionState>
+                            </nodeState>
+                        </nodeStates>
+                    </step>
+                </steps>
+            </workflow>
+        </step>
+    </steps>
+    <nodes>
+        <node name="dignan">
+            <steps>
+                <step>
+                    <stepctx>1</stepctx>
+                    <executionState>SUCCEEDED</executionState>
+                </step>
+                <step>
+                    <stepctx>2/1</stepctx>
+                    <executionState>SUCCEEDED</executionState>
+                </step>
+            </steps>
+        </node>
+    </nodes>
+</executionState>

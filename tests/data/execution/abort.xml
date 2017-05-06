@@ -1,0 +1,3 @@
+<abort status="[abort-state]">
+    <execution id="[id]" status="[status]"/>
+</abort>

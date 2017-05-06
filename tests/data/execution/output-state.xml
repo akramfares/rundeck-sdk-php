@@ -1,0 +1,15 @@
+<output>
+    <id>4939</id>
+    <offset>5893</offset>
+    <completed>true</completed>
+    <execCompleted>true</execCompleted>
+    <hasFailedNodes>true</hasFailedNodes>
+    <execState>failed</execState>
+    <lastModified>1493438404000</lastModified>
+    <execDuration>3794</execDuration>
+    <percentLoaded>99.89828784539753</percentLoaded>
+    <totalSize>1</totalSize>
+    <entries>
+        <entry node='localhost' step='1' stepctx='1' user='admin' time='04:00:01' level='NORMAL' type='stepbegin' absolute_time='2017-04-29T04:00:01Z' log='' />
+    </entries>
+</output>

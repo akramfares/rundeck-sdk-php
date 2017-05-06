@@ -5,38 +5,46 @@ namespace Rundeck;
 class HttpClient
 {
 
-    public static $client;
-    public static $endpoint;
-    public static $authToken;
-    public static $version;
+    private $client;
+    private $endpoint;
+    private $authToken;
+    private $version;
 
-    public static function setAuth($endpoint, $authToken, $version)
+    public function setAuth($endpoint, $authToken, $version)
     {
-        self::$endpoint = trim($endpoint, "/");
-        self::$authToken = $authToken;
-        self::$version = $version;
+        $this->endpoint = trim($endpoint, "/");
+        $this->authToken = $authToken;
+        $this->version = $version;
     }
 
-    public static function getClient()
+    public function getClient()
     {
-        if (isset(self::$client)) {
-            return self::$client;
+        if (isset($this->client)) {
+            return $this->client;
         } else {
-            self::$client = new \GuzzleHttp\Client();
-            return self::$client;
+            $this->client = new \GuzzleHttp\Client();
+            return $this->client;
         }
     }
 
-    public static function get($uri, $alt)
+    /**
+     * @param mixed $client
+     */
+    public function setClient($client)
     {
-        $options = [];
+        $this->client = $client;
+    }
+
+    public function get($uri, $alt)
+    {
+        $options = ['headers'=> ['Accept' => 'application/xml']];
 
         if ($alt == "json") {
             $options = ['headers'=> ['Accept' => 'application/json']];
         }
-        $uri = self::$endpoint. "/api/". self::$version .$uri."?authtoken=".self::$authToken;
+        $uri = $this->endpoint. "/api/". $this->version .$uri."?authtoken=".$this->authToken;
 
-        $response = self::getClient()->request('GET', $uri, $options);
+        $response = $this->getClient()->request('GET', $uri, $options);
         $xml = simplexml_load_string($response->getBody());
         $json = json_encode($xml);
         $data = json_decode($json, true);

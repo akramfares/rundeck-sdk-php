@@ -1,0 +1,18 @@
+<executions count='1'>
+    <execution id='4939' href='http://localhost:4440/api/18/execution/4939' permalink='http://localhost:4440/project/MyProject/execution/show/4939' status='failed' project='MyProject'>
+        <user>admin</user>
+        <date-started unixtime='1493438400760'>2017-04-29T04:00:00Z</date-started>
+        <date-ended unixtime='1493438404554'>2017-04-29T04:00:04Z</date-ended>
+        <job id='c4ec2b60-ac83-4ee2-9266-67ce795c9603' averageDuration='1980265' href='http://localhost:4440/api/18/job/c4ec2b60-ac83-4ee2-9266-67ce795c9603' permalink='http://localhost:4440/project/MyProject/job/show/c4ec2b60-ac83-4ee2-9266-67ce795c9603'>
+            <name>My name</name>
+            <group></group>
+            <project>MyProject</project>
+            <description></description>
+        </job>
+        <description>My description</description>
+        <argstring />
+        <failedNodes>
+            <node name='localhost' />
+        </failedNodes>
+    </execution>
+</executions>
