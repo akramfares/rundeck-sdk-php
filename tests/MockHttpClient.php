@@ -8,7 +8,6 @@ use GuzzleHttp\Psr7\Response;
 
 class MockHttpClient
 {
-
     private $httpClient;
 
     public function __construct($file)

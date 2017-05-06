@@ -1,0 +1,18 @@
+<events count='20' total='506' max='20' offset='0'>
+    <event starttime="[unixtime]" endtime="[unixtime]">
+        <title>[job title, or "adhoc"]</title>
+        <status>[status]</status>
+        <summary>[summary text]</summary>
+        <node-summary succeeded="[X]" failed="[Y]" total="[Z]"/>
+        <user>[user]</user>
+        <project>[project]</project>
+        <date-started>[start date]</date-started>
+        <date-ended>[end date]</date-ended>
+        <!-- if the execution was aborted, the username who aborted it: -->
+        <abortedby>[username]</abortedby>
+        <!-- if associated with an Execution, include the execution id: -->
+        <execution id="[execid]" href="[api href]" permalink="[gui href]"/>
+        <!-- if associated with a Job, include the Job ID: -->
+        <job id="[jobid]"  href="[api href]" permalink="[gui href]"/>
+    </event>
+</events>

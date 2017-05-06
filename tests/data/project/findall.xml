@@ -1,0 +1,10 @@
+<projects count='2'>
+    <project url='http://localhost:4440/api/18/project/Pricyme'>
+        <name>My Project 1</name>
+        <description>My description</description>
+    </project>
+    <project url='http://localhost:4440/api/18/project/MyProject'>
+        <name>MyProject 2</name>
+        <description></description>
+    </project>
+</projects>

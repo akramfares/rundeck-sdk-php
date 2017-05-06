@@ -1,0 +1,3 @@
+<project>
+    <node name="localhost" description="Rundeck server node" tags="" hostname="localhost" osArch="amd64" osFamily="unix" osName="Linux" osVersion="3.14.27-xxxx-grs-ipv6-64" username="rundeck"/>
+</project>
