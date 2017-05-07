@@ -1,0 +1,23 @@
+<joblist>
+    <job>
+        <name>test coreutils</name>
+        <description/>
+        <context>
+            <project>default</project>
+        </context>
+        <sequence>
+            <!-- the Unix 'who' command -->
+            <command>
+                <exec>who</exec>
+            </command>
+            <!-- a Job named test/other tests -->
+            <command>
+                <jobref group="test" name="other tests"/>
+            </command>
+        </sequence>
+        <dispatch>
+            <threadcount>1</threadcount>
+            <keepgoing>false</keepgoing>
+        </dispatch>
+    </job>
+</joblist>

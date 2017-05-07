@@ -1,0 +1,48 @@
+<executions count="[count]" offset="[offset]" max="[max]" total="[total]">
+    <execution id="[ID]" href="[url]" permalink="[url]" status="[status]" project="[project]">
+        <user>[user]</user>
+        <date-started unixtime="[unixtime]">[datetime]</date-started>
+        <customStatus>[string]</customStatus>
+
+        <!-- optional job context if the execution is associated with a job -->
+        <job id="jobID" averageDuration="[milliseconds]" href="[API url]" permalink="[GUI url]">
+            <name>..</name>
+            <group>..</group>
+            <description>..</description>
+            <!-- optional if arguments are passed to the job since v10 -->
+            <options>
+                <option name="optname" value="optvalue"/>...
+            </options>
+        </job>
+
+        <!-- description of the execution -->
+        <description>...</description>
+
+        <!-- argString (arguments) of the execution -->
+        <argstring>...</argstring>
+
+        <!-- if Rundeck is in cluster mode -->
+        <serverUUID>...</serverUUID>
+
+        <!-- The following elements included only if the execution has ended -->
+
+        <!-- the completion time of the execution -->
+        <date-ended unixtime="[unixtime]">[datetime]</date-ended>
+
+        <!-- if the execution was aborted, the username who aborted it: -->
+        <abortedby>[username]</abortedby>
+
+        <!-- if the execution was is finished, a list of node names that succeeded -->
+        <successfulNodes>
+            <node name="node1"/>
+            <node name="node2"/>
+        </successfulNodes>
+
+        <!-- if the execution was is finished, a list of node names that failed -->
+        <failedNodes>
+            <node name="node3"/>
+            <node name="node4"/>
+        </failedNodes>
+
+    </execution>
+</executions>
