@@ -10,6 +10,13 @@ use Rundeck\Resources\Execution;
  */
 class ExecutionTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * Test class exists
+     */
+    public function testClassExists()
+    {
+        $this->assertTrue(class_exists("\\Rundeck\\Resources\\Execution"));
+    }
 
     /**
      * Test get execution info
@@ -69,5 +76,27 @@ class ExecutionTest extends \PHPUnit_Framework_TestCase
         $execution = new Execution($httpClient->getClient());
 
         $this->assertArrayHasKey("entries", $execution->get("output/state"));
+    }
+
+    /**
+     * @expectedException \Exception
+     * @expectedExceptionMessage Invalid Action: exception
+     */
+    public function testExceptionAction()
+    {
+        $execution = new Execution(new HttpClient());
+
+        $execution->get("exception");
+    }
+
+    /**
+     * @expectedException \Exception
+     * @expectedExceptionMessage Invalid Format: wrong-format
+     */
+    public function testExceptionFormat()
+    {
+        $execution = new Execution(new HttpClient());
+
+        $execution->get("state", "wrong-format");
     }
 }

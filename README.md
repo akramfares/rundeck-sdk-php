@@ -7,8 +7,7 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-PHP client for Rundeck web API. 
-This is a work in progress...
+PHP client for Rundeck web API.
 
 ## Install
 

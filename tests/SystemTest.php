@@ -10,6 +10,13 @@ use Rundeck\Resources\System;
  */
 class SystemTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * Test class exists
+     */
+    public function testClassExists()
+    {
+        $this->assertTrue(class_exists("\\Rundeck\\Resources\\System"));
+    }
 
     /**
      * Test get system info

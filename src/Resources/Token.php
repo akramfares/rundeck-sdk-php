@@ -4,10 +4,8 @@ namespace Rundeck\Resources;
 
 use Rundeck\HttpClient;
 
-class Token
+class Token extends Resource
 {
-    private $name;
-    private $client;
 
     public function __construct(HttpClient $client, $name = null)
     {

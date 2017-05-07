@@ -9,6 +9,14 @@ namespace Rundeck;
 class RundeckTest extends \PHPUnit_Framework_TestCase
 {
     /**
+     * Test class exists
+     */
+    public function testClassExists()
+    {
+        $this->assertTrue(class_exists("\\Rundeck\\Rundeck"));
+    }
+
+    /**
      * Test get project info
      */
     public function testGetInfo()

@@ -11,6 +11,14 @@ use Rundeck\Resources\Project;
 class ProjectTest extends \PHPUnit_Framework_TestCase
 {
     /**
+     * Test class exists
+     */
+    public function testClassExists()
+    {
+        $this->assertTrue(class_exists("\\Rundeck\\Resources\\Project"));
+    }
+
+    /**
      * Test get project history
      */
     public function testGetHistory()

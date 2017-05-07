@@ -11,6 +11,14 @@ use Rundeck\Resources\Job;
 class JobTest extends \PHPUnit_Framework_TestCase
 {
     /**
+     * Test class exists
+     */
+    public function testClassExists()
+    {
+        $this->assertTrue(class_exists("\\Rundeck\\Resources\\Job"));
+    }
+    
+    /**
      * Test get job info
      */
     public function testGetInfo()
