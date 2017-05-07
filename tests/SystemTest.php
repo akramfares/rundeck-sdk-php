@@ -4,6 +4,10 @@ namespace Rundeck;
 
 use Rundeck\Resources\System;
 
+/**
+ * Class SystemTest
+ * @package Rundeck
+ */
 class SystemTest extends \PHPUnit_Framework_TestCase
 {
 

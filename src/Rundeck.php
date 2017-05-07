@@ -4,9 +4,13 @@ namespace Rundeck;
 
 class Rundeck
 {
-    private $client;
     /**
-     * Create a new Client Instance
+     * @var HttpClient
+     */
+    private $client;
+
+    /**
+     * Create a new Rundeck Instance
      */
     public function __construct($endpoint, $authToken, $version)
     {
@@ -14,6 +18,20 @@ class Rundeck
         $this->client->setAuth($endpoint, $authToken, $version);
     }
 
+    /**
+     * @param HttpClient $client
+     */
+    public function setClient($client)
+    {
+        $this->client = $client;
+    }
+
+    /**
+     * @param $name
+     * @param $arguments
+     * @return object
+     * @throws \Exception
+     */
     public function __call($name, $arguments)
     {
         $className = "\\Rundeck\\Resources\\".ucfirst($name);

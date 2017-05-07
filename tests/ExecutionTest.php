@@ -4,6 +4,10 @@ namespace Rundeck;
 
 use Rundeck\Resources\Execution;
 
+/**
+ * Class ExecutionTest
+ * @package Rundeck
+ */
 class ExecutionTest extends \PHPUnit_Framework_TestCase
 {
 

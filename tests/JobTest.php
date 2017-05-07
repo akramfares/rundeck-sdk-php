@@ -4,6 +4,10 @@ namespace Rundeck;
 
 use Rundeck\Resources\Job;
 
+/**
+ * Class JobTest
+ * @package Rundeck
+ */
 class JobTest extends \PHPUnit_Framework_TestCase
 {
     /**

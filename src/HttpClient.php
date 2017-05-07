@@ -2,14 +2,34 @@
 
 namespace Rundeck;
 
+/**
+ * Class HttpClient
+ * @package Rundeck
+ */
 class HttpClient
 {
-
+    /**
+     * @var \GuzzleHttp\Client
+     */
     private $client;
+    /**
+     * @var string
+     */
     private $endpoint;
+    /**
+     * @var string
+     */
     private $authToken;
+    /**
+     * @var int
+     */
     private $version;
 
+    /**
+     * @param $endpoint
+     * @param $authToken
+     * @param $version
+     */
     public function setAuth($endpoint, $authToken, $version)
     {
         $this->endpoint = trim($endpoint, "/");
@@ -17,6 +37,9 @@ class HttpClient
         $this->version = $version;
     }
 
+    /**
+     * @return \GuzzleHttp\Client
+     */
     public function getClient()
     {
         if (isset($this->client)) {
@@ -35,6 +58,11 @@ class HttpClient
         $this->client = $client;
     }
 
+    /**
+     * @param $uri
+     * @param $alt
+     * @return array
+     */
     public function get($uri, $alt)
     {
         $options = ['headers'=> ['Accept' => 'application/xml']];
