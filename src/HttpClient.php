@@ -79,4 +79,26 @@ class HttpClient
 
         return $data;
     }
+
+    /**
+     * @param $uri
+     * @param $alt
+     * @return array
+     */
+    public function post($uri, $alt)
+    {
+        $options = ['headers'=> ['Accept' => 'application/xml']];
+
+        if ($alt == "json") {
+            $options = ['headers'=> ['Accept' => 'application/json']];
+        }
+        $uri = $this->endpoint. "/api/". $this->version .$uri."?authtoken=".$this->authToken;
+
+        $response = $this->getClient()->request('POST', $uri, $options);
+        $xml = simplexml_load_string($response->getBody());
+        $json = json_encode($xml);
+        $data = json_decode($json, true);
+
+        return $data;
+    }
 }

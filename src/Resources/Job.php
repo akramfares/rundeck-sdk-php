@@ -39,4 +39,15 @@ class Job extends Resource
         $response = $this->client->get('/job/'.$this->name, $alt);
         return $response;
     }
+
+
+    /**
+     * @param string $alt
+     * @return mixed
+     */
+    public function run($alt = "xml")
+    {
+        $response = $this->client->post('/job/'.$this->name, $alt);
+        return $response;
+    }
 }
